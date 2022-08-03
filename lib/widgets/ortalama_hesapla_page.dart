@@ -14,6 +14,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Center(
           child: Text(Sabitler.baslikText),
         ),
