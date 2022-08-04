@@ -12,19 +12,29 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Center(
-          child: Text(
-            Sabitler.baslikText,
-            style: Sabitler.baslikStyle,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Center(
+            child: Text(
+              Sabitler.baslikText,
+              style: Sabitler.baslikStyle,
+            ),
           ),
         ),
-      ),
-      body: const Center(
-        child: Text('Merhaba'),
-      ),
-    );
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              child: Text('Form buraya gelecek'),
+              color: Colors.red,
+            ),
+            Expanded(
+                child: Container(
+              child: Text('form'),
+              color: Colors.blue,
+            ))
+          ],
+        ));
   }
 }
