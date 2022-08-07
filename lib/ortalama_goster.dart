@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import 'package:not_hesaplama/constans/app_constants.dart';
 
 class OrtalamGoster extends StatelessWidget {
   final double ortalama;
@@ -13,8 +13,14 @@ class OrtalamGoster extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(dersSayisi > 0 ? '$dersSayisi Ders Gİrildi' : 'Ders Seçiniz'),
-        Text('2.85'),
+        Text(
+          dersSayisi > 0 ? '$dersSayisi Ders Gİrildi' : 'Ders Seçiniz',
+          style: Sabitler.dersSayisStyle,
+        ),
+        Text(
+          ortalama >= 0 ? '$ortalama' : '0.0',
+          style: Sabitler.ortalamaStyle,
+        ),
         Text('ortalama')
       ],
     );
