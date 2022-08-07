@@ -33,9 +33,9 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
                   flex: 2,
                   child: _buildForm(),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 1,
-                  child: OrtalamGoster(ortalama: 2.58, dersSayisi: 5),
+                  child: OrtalamGoster(ortalama: 4.67676, dersSayisi: 4),
                 )
               ],
             ),
@@ -57,7 +57,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit)),
+                _buildHarfler(),
                 IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit)),
                 IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit))
               ],
@@ -73,6 +73,45 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
           border: OutlineInputBorder(borderRadius: Sabitler.borderRadius),
           filled: true,
           fillColor: Sabitler.anaRenk.shade100.withOpacity(0.3)),
+    );
+  }
+
+  Widget _buildHarfler() {
+    double secilenDeger = 4;
+    return Container(
+      decoration: BoxDecoration(
+          color: Sabitler.anaRenk.shade100.withOpacity(0.3),
+          borderRadius: Sabitler.borderRadius),
+      child: DropdownButton<double>(
+        value: 4,
+        items: const [
+          DropdownMenuItem(
+            child: Text('AA'),
+            value: 4,
+          ),
+          DropdownMenuItem(
+            child: Text('BA'),
+            value: 3.5,
+          ),
+          DropdownMenuItem(
+            child: Text('BB'),
+            value: 3,
+          ),
+          DropdownMenuItem(
+            child: Text('CB'),
+            value: 2.5,
+          ),
+          DropdownMenuItem(
+            child: Text('CC'),
+            value: 2,
+          )
+        ],
+        onChanged: (deger) {
+          setState(() {
+            secilenDeger = deger!;
+          });
+        },
+      ),
     );
   }
 }

@@ -8,7 +8,7 @@ class Sabitler {
       fontSize: 24, fontWeight: FontWeight.w900, color: anaRenk);
   static BorderRadius borderRadius = BorderRadius.circular(24);
 
-  static final TextStyle dersSayisStyle = GoogleFonts.quicksand(
+  static final TextStyle ortlamaGosterBodyStyle = GoogleFonts.quicksand(
       fontSize: 16, fontWeight: FontWeight.w600, color: anaRenk);
 
   static final TextStyle ortalamaStyle = GoogleFonts.quicksand(
