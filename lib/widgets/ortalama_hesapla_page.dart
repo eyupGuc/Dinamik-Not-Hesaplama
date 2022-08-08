@@ -10,6 +10,7 @@ class OrtalamaHesaplaPage extends StatefulWidget {
 }
 
 class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
+  double secilenDeger = 4;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -77,13 +78,12 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
   }
 
   Widget _buildHarfler() {
-    double secilenDeger = 4;
     return Container(
       decoration: BoxDecoration(
           color: Sabitler.anaRenk.shade100.withOpacity(0.3),
           borderRadius: Sabitler.borderRadius),
       child: DropdownButton<double>(
-        value: 4,
+        value: secilenDeger,
         items: const [
           DropdownMenuItem(
             child: Text('AA'),
