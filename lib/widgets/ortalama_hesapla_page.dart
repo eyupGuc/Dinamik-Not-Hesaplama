@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:not_hesaplama/constans/app_constants.dart';
 import 'package:not_hesaplama/ortalama_goster.dart';
 
+import '../helper/data_helper.dart';
+
 class OrtalamaHesaplaPage extends StatefulWidget {
   const OrtalamaHesaplaPage({Key? key}) : super(key: key);
 
@@ -79,38 +81,22 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
 
   Widget _buildHarfler() {
     return Container(
+      padding: Sabitler.dropDownPadding,
       decoration: BoxDecoration(
           color: Sabitler.anaRenk.shade100.withOpacity(0.3),
           borderRadius: Sabitler.borderRadius),
       child: DropdownButton<double>(
+        elevation: 0,
+        iconEnabledColor: Sabitler.anaRenk.shade200,
         value: secilenDeger,
-        items: const [
-          DropdownMenuItem(
-            child: Text('AA'),
-            value: 4,
-          ),
-          DropdownMenuItem(
-            child: Text('BA'),
-            value: 3.5,
-          ),
-          DropdownMenuItem(
-            child: Text('BB'),
-            value: 3,
-          ),
-          DropdownMenuItem(
-            child: Text('CB'),
-            value: 2.5,
-          ),
-          DropdownMenuItem(
-            child: Text('CC'),
-            value: 2,
-          )
-        ],
+        items: DataHelper.tumDerslerinHarfleri(),
         onChanged: (deger) {
           setState(() {
             secilenDeger = deger!;
+            print(secilenDeger);
           });
         },
+        underline: Container(),
       ),
     );
   }
