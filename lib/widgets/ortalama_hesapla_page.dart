@@ -12,7 +12,8 @@ class OrtalamaHesaplaPage extends StatefulWidget {
 }
 
 class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
-  double secilenDeger = 4;
+  double secilenHarfDegeri = 4;
+  double secilenKrediDegeri = 1;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -88,12 +89,34 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
       child: DropdownButton<double>(
         elevation: 0,
         iconEnabledColor: Sabitler.anaRenk.shade200,
-        value: secilenDeger,
+        value: secilenHarfDegeri,
         items: DataHelper.tumDerslerinHarfleri(),
         onChanged: (deger) {
           setState(() {
-            secilenDeger = deger!;
-            print(secilenDeger);
+            secilenHarfDegeri = deger!;
+            print(secilenHarfDegeri);
+          });
+        },
+        underline: Container(),
+      ),
+    );
+  }
+
+  Widget _buildKrediler() {
+    return Container(
+      padding: Sabitler.dropDownPadding,
+      decoration: BoxDecoration(
+          color: Sabitler.anaRenk.shade100.withOpacity(0.3),
+          borderRadius: Sabitler.borderRadius),
+      child: DropdownButton<double>(
+        elevation: 0,
+        iconEnabledColor: Sabitler.anaRenk.shade200,
+        value: secilenKrediDegeri,
+        items: DataHelper.tumDerslerinKredileri(),
+        onChanged: (deger) {
+          setState(() {
+            secilenKrediDegeri = deger!;
+            print(secilenKrediDegeri);
           });
         },
         underline: Container(),
