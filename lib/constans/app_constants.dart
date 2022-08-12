@@ -6,7 +6,7 @@ class Sabitler {
   static const String baslikText = "Ortalama Hesapla";
   static final TextStyle baslikStyle = GoogleFonts.quicksand(
       fontSize: 24, fontWeight: FontWeight.w900, color: anaRenk);
-  static BorderRadius borderRadius = BorderRadius.circular(24);
+  static BorderRadius borderRadius = BorderRadius.circular(16);
 
   static final TextStyle ortlamaGosterBodyStyle = GoogleFonts.quicksand(
       fontSize: 16, fontWeight: FontWeight.w600, color: anaRenk);
@@ -15,4 +15,6 @@ class Sabitler {
       fontSize: 55, fontWeight: FontWeight.w800, color: anaRenk);
   static final EdgeInsets dropDownPadding =
       EdgeInsets.symmetric(horizontal: 16, vertical: 8);
+
+  static final EdgeInsets yatayPadding8 = EdgeInsets.symmetric(horizontal: 8);
 }

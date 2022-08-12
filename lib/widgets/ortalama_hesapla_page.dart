@@ -57,13 +57,34 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
         key: formKey,
         child: Column(
           children: [
-            _buildTextFormField(),
+            Padding(
+              padding: Sabitler.yatayPadding8,
+              child: _buildTextFormField(),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildHarfler(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit))
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: _buildHarfler(),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: Sabitler.yatayPadding8,
+                    child: _buildKrediler(),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.arrow_forward_ios_sharp),
+                  color: Sabitler.anaRenk,
+                  iconSize: 30,
+                )
               ],
             )
           ],
@@ -82,6 +103,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
 
   Widget _buildHarfler() {
     return Container(
+      alignment: Alignment.center,
       padding: Sabitler.dropDownPadding,
       decoration: BoxDecoration(
           color: Sabitler.anaRenk.shade100.withOpacity(0.3),
@@ -104,6 +126,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
 
   Widget _buildKrediler() {
     return Container(
+      alignment: Alignment.center,
       padding: Sabitler.dropDownPadding,
       decoration: BoxDecoration(
           color: Sabitler.anaRenk.shade100.withOpacity(0.3),
